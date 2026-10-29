@@ -1,2 +1,14 @@
-{% extends 'base.html %}
+{% extends 'base.html' %}
 
+{% block content %}
+<header>
+    <h1>Welcome! Please choose where you would like to go.</h1>
+    <img src="{{ url_for('static', filename='catdancinggif.jpg') }}" alt="A car">
+    <nav aria-label="Main navigation">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('formpage') }}">Vote for your favorite car brand!</a>
+    </nav>
+</header>
+
+
+{% endblock %}
