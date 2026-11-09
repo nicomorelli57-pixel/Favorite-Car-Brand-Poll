@@ -12,24 +12,9 @@
 <form method="POST">
     <fieldset>
         <legend>Which car brand is your favorite?</legend>
-        <label><input type="radio" name="brand" value="Toyota" required> Toyota</label>
-        <label><input type="radio" name="brand" value="Lexus"> Lexus</label>
-        <label><input type="radio" name="brand" value="Ford"> Ford</label>
-        <label><input type="radio" name="brand" value="Honda"> Honda</label>
-        <label><input type="radio" name="brand" value="Chevrolet"> Chevrolet</label>
-        <label><input type="radio" name="brand" value="Nissan"> Nissan</label>
-        <label><input type="radio" name="brand" value="BMW"> BMW</label>
-        <label><input type="radio" name="brand" value="Alfa Romeo"> Alfa Romeo</label>
-        <label><input type="radio" name="brand" value="Ferarri"> Ferarri</label>
-        <label><input type="radio" name="brand" value="Lamborghini"> Lamborghini</label>
-        <label><input type="radio" name="brand" value="Pagani"> Pagani</label>
-        <label><input type="radio" name="brand" value="Mclaren"> Mclaren</label>
-        <label><input type="radio" name="brand" value="Tesla"> Tesla</label> 
-    
-    
-    
-    
-    
+        {% for brand in brands %}
+        <label><input type="radio" name="brand" value="{{ brand }}" required> {{ brand }}</label>
+        {% endfor %}
     </fieldset>
 
     <button type="submit">Submit Vote</button>
@@ -44,4 +29,5 @@
 
 
 <a href="{{ url_for('home') }}">Back to Homepage</a>
+<a href="{{ url_for('admin_page') }}">View poll results</a>
 {% endblock %}

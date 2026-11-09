@@ -5,7 +5,8 @@
     <h1>Mr. Balls welcomes you. Vote for your favorite brand at the link below.</h1>
     <img src="{{ url_for('static', filename='mrballs.jpg') }}" alt="Mr Balls">
     <nav aria-label="Main navigation">
-    <a href="{{ url_for('formpage') }}">Vote Here</a>
+        <a href="{{ url_for('formpage') }}">Vote Here</a>
+        <a href="{{ url_for('admin_page') }}">View poll results</a>
     </nav>
 </header>
 

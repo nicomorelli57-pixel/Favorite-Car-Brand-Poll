@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Poll Results</h1>
+<p>Total votes: {{ total_votes }}</p>
+
+{% if votes %}
+<table>
+    <thead>
+        <tr>
+            <th>Car brand</th>
+            <th>Votes</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for vote in votes %}
+        <tr>
+            <td>{{ vote['brand'] }}</td>
+            <td>{{ vote['vote_count'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No one has voted yet.</p>
+{% endif %}
+
+<a href="{{ url_for('formpage') }}">Go vote</a>
+<a href="{{ url_for('home') }}">Back to Homepage</a>
+{% endblock %}
